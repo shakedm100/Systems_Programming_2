@@ -1,10 +1,16 @@
 #pragma once
 #include <cstddef>
 
-struct Vertice {
+struct Vertex {
     int data;
     int vertex;
-    Vertice* next;
+    Vertex* next;
+};
+
+struct Edge {
+    int src;
+    int dest;
+    int weight;
 };
 
 class Queue
@@ -45,3 +51,23 @@ class Queue
         int getCapacity();
 };
 
+
+class UnionFind{
+    private:
+    int size;
+    int* rank;
+    int* parent;
+
+    public:
+    UnionFind(int n);
+
+    ~UnionFind()
+    {
+        delete[] rank;
+        delete[] parent;
+    }
+
+    int find(int x);
+    void unionSets(int x, int y);
+    bool connected(int x, int y);
+};

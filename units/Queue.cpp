@@ -30,7 +30,7 @@ bool Queue::isEmpty()
 
 int Queue::peek()
 {
-    if(isEmpty)
+    if(isEmpty())
         return -1;
     
     return array[front];

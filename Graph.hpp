@@ -1,43 +1,20 @@
 #pragma once
-#include "DataStructures.hpp"
-
+#include "units/DataStructures.hpp"
 
 class Graph{
     private:
         const int vertices;
-        Vertice** adj;
+        Vertex** adj;
     
     public:
         void addEdge(int source, int destination, int weight);
         void removeEdge(int source, int destination);
-        void printGraph();
-        int getVertices();
-        Vertice**& getAdj();
-
-        Graph(int vertices) : vertices(vertices)
-        {   
-            adj = new Vertice*[vertices];
-
-            for (int i = 0; i < vertices; i++)
-            {
-                adj[i] = nullptr;
-            }
-        }
-
-        ~Graph()
-        {
-            for (int i = 0; i < vertices; i++)
-            {
-                Vertice* temp = adj[i];
-                while (temp != nullptr)
-                {
-                    Vertice* next = temp->next;
-                    delete temp;
-                    temp = next;
-                }
-            }
-
-            delete[] adj;
-        }
-    
+        void printGraph() const;
+        int getVertices() const;
+        //Vertex** getAdj() const;
+        const Vertex* const * getAdj() const;
+        bool hasEdge(int source, int destination) const;
+        int getWeight(int source, int destination) const;
+        Graph(int vertices);
+        ~Graph();
     };
