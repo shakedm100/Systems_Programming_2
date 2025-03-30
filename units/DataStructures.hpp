@@ -1,3 +1,9 @@
+/*
+shaked1mi@gmail.com
+Shaked Michael
+318772191
+*/
+
 #pragma once
 #include <cstddef>
 
@@ -26,14 +32,6 @@ class Queue
         Queue(int capacity) : capacity(capacity)
         {
             array = new int[capacity];
-            rear = -1;
-            front = 0;
-        }
-
-        Queue()
-        {
-            capacity = 0;
-            array = new int[0];
             rear = -1;
             front = 0;
         }

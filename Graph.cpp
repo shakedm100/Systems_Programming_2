@@ -1,5 +1,12 @@
+/*
+shaked1mi@gmail.com
+Shaked Michael
+318772191
+*/
+
 #include "Graph.hpp"
 #include <iostream>
+#include <stdexcept>
 
 using namespace std;
 
@@ -29,10 +36,22 @@ Graph::~Graph()
     delete[] adj;
 }
 
+/**
+ * @brief Adds an edge to an undirected graph
+ * @param source - The starting vertex
+ * @param destination - The ending vertex
+ * @param weight - The weight of the edge
+ */
 void Graph::addEdge(int source, int destination, int weight)
 {
+    if(weight < 0)
+        throw invalid_argument("Edge cannot be negative!");
+    if(source < 0 || source >= vertices)
+        throw invalid_argument("Invalid argument for source");
+    if(destination < 0 || destination >= vertices)
+        throw invalid_argument("Invalid argument for destination");
     if(hasEdge(source, destination))
-        return;
+        throw invalid_argument("Edge already exists!");
 
     Vertex* newVerticeSrc = new Vertex;
     newVerticeSrc->data = weight;
@@ -71,10 +90,19 @@ void Graph::addEdge(int source, int destination, int weight)
     }
 }
 
+/**
+ * @brief Removes an edge from an undirected graph
+ * @param source - The starting vertex
+ * @param destination - The ending vertex
+ */
 void Graph::removeEdge(int source, int destination)
 {
+    if(source < 0 || source >= vertices)
+        throw invalid_argument("Invalid argument for source");
+    if(destination < 0 || destination >= vertices)
+        throw invalid_argument("Invalid argument for destination");
     if(!hasEdge(source, destination))
-        return;
+        throw invalid_argument("Edge doesn't exists!");
 
     // Remove destination from source's list
     Vertex* current = adj[source];
@@ -110,6 +138,9 @@ void Graph::removeEdge(int source, int destination)
     }
 }
 
+/**
+ * @brief Prints the graph
+ */
 void Graph::printGraph() const
 {
     Vertex* current;
@@ -132,18 +163,25 @@ int Graph::getVertices() const
     return vertices;
 }
 
-/*Vertex** Graph::getAdj() const
-{
-    return adj;
-}*/
 
 const Vertex* const * Graph::getAdj() const
 {
     return adj;
 }
 
+/**
+ * @brief Checks if a given edge exists in the graph
+ * @param source - The starting vertex
+ * @param destination - The ending vertex
+ * @return true if the edge exists, false otherwise
+ */
 bool Graph::hasEdge(int source, int destination) const
 {
+    if(source < 0 || source >= vertices)
+        throw invalid_argument("Invalid argument for source");
+    if(destination < 0 || destination >= vertices)
+        throw invalid_argument("Invalid argument for destination");
+
     Vertex* current = adj[source];
 
     while (current != nullptr)
@@ -160,9 +198,19 @@ bool Graph::hasEdge(int source, int destination) const
     return false;
 }
 
-
+/**
+ * @brief Checks a given edge's weight
+ * @param source - The starting vertex
+ * @param destination - The ending vertex
+ * @return returns the weight if the edge exists, -1 otherwise
+ */
 int Graph::getWeight(int source, int destination) const
 {
+    if(source < 0 || source >= vertices)
+        throw invalid_argument("Invalid argument for source");
+    if(destination < 0 || destination >= vertices)
+        throw invalid_argument("Invalid argument for destination");
+
     Vertex* current = adj[source];
 
     while (current != nullptr)

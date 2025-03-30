@@ -1,4 +1,11 @@
+/*
+shaked1mi@gmail.com
+Shaked Michael
+318772191
+*/
+
 #include "DataStructures.hpp";
+
 
 UnionFind::UnionFind(int n) : size(n)
     {
@@ -11,6 +18,10 @@ UnionFind::UnionFind(int n) : size(n)
         }
     }
 
+/**
+  *  @brief Finds if x is exists in this UnionFind
+  * Compressing the path if it doesn't find x this call
+*/
 int UnionFind::find(int x)
 {
     if(parent[x] != x)
@@ -19,6 +30,10 @@ int UnionFind::find(int x)
     return parent[x];
 }
 
+/**
+ * @brief Unionizes two numbers depending on their rank
+ * The one with the higher rank becomes the parent
+ */
 void UnionFind::unionSets(int x, int y)
 {
     int rootX = find(x);
@@ -38,6 +53,10 @@ void UnionFind::unionSets(int x, int y)
     }
 }
 
+/**
+ * @brief A helper functions that returns true if both of the numbers
+ * are in the same union
+ */
 bool UnionFind::connected(int x, int y) 
 {
     return find(x) == find(y);

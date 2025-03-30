@@ -1,9 +1,14 @@
+#shaked1mi@gmail.com
+#Shaked Michael
+#318772191
+
+
 CXX = g++
 CXXFLAGS = -std=c++11 -Wall -I. -Iunits
 
 COMMON_SOURCES = Algorithms.cpp Graph.cpp units/Queue.cpp units/UnionFind.cpp
 
-MAIN_SOURCES = main.cpp $(COMMON_SOURCES)
+MAIN_SOURCES = Main.cpp $(COMMON_SOURCES)
 
 TEST_SOURCES = Test.cpp $(COMMON_SOURCES)
 

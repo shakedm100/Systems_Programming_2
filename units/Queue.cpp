@@ -1,8 +1,17 @@
+/*
+shaked1mi@gmail.com
+Shaked Michael
+318772191
+*/
+
 #include "DataStructures.hpp"
 #include <iostream>
 
 using namespace std;
 
+/**
+ * @brief Inserts a number to the queue
+ */
 void Queue::enqueue(int data)
 {
     if(rear < capacity - 1)
@@ -11,6 +20,9 @@ void Queue::enqueue(int data)
         cerr << "The queue is full!\n";
 }
 
+/**
+ * @brief Removes a number from the queue
+ */
 void Queue::dequeue()
 {
     if(!isEmpty())
@@ -19,6 +31,9 @@ void Queue::dequeue()
         cerr << "The queue is empty. Can't dequeue\n";
 }
 
+/**
+ * @brief If the queue is empty it returns true
+ */
 bool Queue::isEmpty()
 {
     if(front > rear)
@@ -27,7 +42,9 @@ bool Queue::isEmpty()
     return false;
 }
 
-
+/**
+ * @brief Returns the first item in the queue without deleting it
+ */
 int Queue::peek()
 {
     if(isEmpty())
@@ -36,12 +53,6 @@ int Queue::peek()
     return array[front];
 }
 
-void Queue::setCapacity(int capacity)
-{
-    this->capacity = capacity;
-    delete[] this->array;
-    this->array = new int[capacity];
-}
 
 int Queue::getCapacity()
 {

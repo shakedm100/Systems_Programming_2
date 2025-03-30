@@ -1,3 +1,9 @@
+/*
+shaked1mi@gmail.com
+Shaked Michael
+318772191
+*/
+
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"
 #include "Algorithms.hpp"
@@ -12,7 +18,8 @@ This struct is to create a single Graph that all the test cases will use
 struct GraphFixture {
     Graph g;
 
-    GraphFixture() : g(5) {
+    GraphFixture() : g(5) 
+    {
         g.addEdge(0, 1, 2);
         g.addEdge(0, 2, 4);
         g.addEdge(1, 2, 1);
@@ -40,6 +47,15 @@ TEST_CASE_FIXTURE(GraphFixture, "Graph: basic operations") {
     CHECK(g.hasEdge(1,4) == false);
     CHECK(g.hasEdge(4,1) == false);
     CHECK(g.hasEdge(1,1) == false);
+
+    CHECK_THROWS(g.addEdge(-1,1,5));
+    CHECK_THROWS(g.addEdge(1,-1,5));
+    CHECK_THROWS(g.addEdge(1,1,-5));
+    CHECK_THROWS(g.addEdge(0,1,5)); //Exists
+    
+    CHECK_THROWS(g.removeEdge(-1,1));
+    CHECK_THROWS(g.removeEdge(1,-1));
+    CHECK_THROWS(g.removeEdge(0,3));
 }
 
 TEST_CASE_FIXTURE(GraphFixture, "BFS")

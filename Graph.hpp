@@ -1,9 +1,15 @@
+/*
+shaked1mi@gmail.com
+Shaked Michael
+318772191
+*/
+
 #pragma once
 #include "units/DataStructures.hpp"
 
 class Graph{
     private:
-        const int vertices;
+        int vertices;
         Vertex** adj;
     
     public:
