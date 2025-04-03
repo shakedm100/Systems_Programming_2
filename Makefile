@@ -1,6 +1,4 @@
 #shaked1mi@gmail.com
-#Shaked Michael
-#318772191
 
 
 CXX = g++

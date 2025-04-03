@@ -1,8 +1,4 @@
-/*
-shaked1mi@gmail.com
-Shaked Michael
-318772191
-*/
+//shaked1mi@gmail.com
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 #include "doctest.h"

@@ -1,8 +1,4 @@
-/*
-shaked1mi@gmail.com
-Shaked Michael
-318772191
-*/
+//shaked1mi@gmail.com
 
 #pragma once
 #include <cstddef>

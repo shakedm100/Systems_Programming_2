@@ -1,8 +1,4 @@
-/*
-shaked1mi@gmail.com
-Shaked Michael
-318772191
-*/
+//shaked1mi@gmail.com
 
 #include "Algorithms.hpp"
 #include "Graph.hpp"
