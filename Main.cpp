@@ -1,10 +1,11 @@
 //shaked1mi@gmail.com
 
 
-#include "Graph.hpp"
 #include "Algorithms.hpp"
 #include <iostream>
+#include "Graph.hpp"
 
+using namespace graph;
 using namespace std;
 
 int main()

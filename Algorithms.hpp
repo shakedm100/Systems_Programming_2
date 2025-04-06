@@ -3,6 +3,8 @@
 #pragma once
 #include "Graph.hpp"
 
+using namespace graph;
+
 Graph BFS(const Graph& graph, const Vertex start);
 Graph DFS(const Graph& g, int start);
 Graph dijkstra(const Graph& graph, int start);

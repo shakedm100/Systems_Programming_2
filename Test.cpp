@@ -5,6 +5,8 @@
 #include "Algorithms.hpp"
 #include "Graph.hpp"
 
+using namespace graph;
+
 //Remark: DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN implements main automatically for the test functions
 
 

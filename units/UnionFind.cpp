@@ -1,6 +1,6 @@
 //shaked1mi@gmail.com
 
-#include "DataStructures.hpp";
+#include "DataStructures.hpp"
 
 
 UnionFind::UnionFind(int n) : size(n)
