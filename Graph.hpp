@@ -3,6 +3,9 @@
 #pragma once
 #include "units/DataStructures.hpp"
 
+namespace graph
+{
+
 class Graph{
     private:
         int vertices;
@@ -20,3 +23,5 @@ class Graph{
         Graph(int vertices);
         ~Graph();
     };
+
+}

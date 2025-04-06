@@ -6,6 +6,9 @@
 
 using namespace std;
 
+namespace graph
+{
+
 Graph::Graph(int vertices) : vertices(vertices)
 {   
     adj = new Vertex*[vertices];
@@ -222,4 +225,6 @@ int Graph::getWeight(int source, int destination) const
     
     //cout << "didn't find weight for (" + to_string(source) + "," + to_string(destination) + ")" << endl;
     return -1;
+}
+
 }

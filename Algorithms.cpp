@@ -1,10 +1,10 @@
 //shaked1mi@gmail.com
 
 #include "Algorithms.hpp"
-#include "Graph.hpp"
 #include <bits/stdc++.h>
 
 using namespace std;
+using namespace graph;
 
 /**
  * @brief Performs a Breadth-First Search (BFS) on the graph.
